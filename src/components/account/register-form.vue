@@ -26,7 +26,9 @@
             @click:append="show = !show"
           ></v-text-field>
         </v-col>
-        <v-btn outlined block>register</v-btn>
+        <v-card-body>
+          <v-btn tile text block>register</v-btn>
+        </v-card-body>
     </v-col>
   </v-card>
 </template>
