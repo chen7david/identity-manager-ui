@@ -1,7 +1,7 @@
 <template>
-  <v-card max-width="400px">
+  <v-card tile max-width="400px">
     <v-col cols="12">
-      
+
         <v-list-item two-line>
           <v-list-item-content>
               <div class="overline">register</div>

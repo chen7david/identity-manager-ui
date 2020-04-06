@@ -11,7 +11,7 @@ export default {
       error = error ? error : {}
       return error.message
     },
-    snackbar: (state) => state.snackbar,
+    snackbar: (state) => state.snackbar ? state.snackbar : {},
   },
   mutations: {
     SET_VALIDATION: (state, details) => state.validation = details,
