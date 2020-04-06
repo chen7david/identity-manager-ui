@@ -1,8 +1,8 @@
 <template>
     <v-app-bar app dark>
         <v-spacer></v-spacer>
-        <v-btn tile>login</v-btn>
-        <v-btn tile>register</v-btn>
+        <v-btn router to="/login" tile>login</v-btn>
+        <v-btn router to="/register" tile>register</v-btn>
     </v-app-bar>
 </template>
 
