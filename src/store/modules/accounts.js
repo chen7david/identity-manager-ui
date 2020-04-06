@@ -10,7 +10,6 @@ export default {
         account: (state) => state.account,
         authInfo: (state) => state.authInfo,
         isAuth: (state) => state.hasToken,
-
     },
     mutations: {
         SET_AUTH: (state, hasToken) => state.hasToken = hasToken
