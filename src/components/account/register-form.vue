@@ -1,14 +1,17 @@
 <template>
   <v-card max-width="400px">
     <v-col cols="12">
+      
         <v-list-item two-line>
           <v-list-item-content>
               <div class="overline">register</div>
               <v-list-item-subtitle>create an account today</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>  
+
         <v-col>
           <v-text-field
+            :error-messages="validate('username')"
             label="Username"
             name="username"
             outlined
@@ -16,8 +19,10 @@
             v-model="account.username"
           ></v-text-field>
         </v-col>
+
         <v-col>
           <v-text-field
+            :error-messages="validate('password')"
             label="Password"
             name="password"
             outlined
@@ -31,8 +36,9 @@
 
         <v-col>
           <v-text-field
+            :error-messages="validate('passwordConfirm')"
             label="Password-Confirm"
-            name="password"
+            name="passwordConfirm"
             outlined
             :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show ? 'text' : 'password'"
@@ -41,10 +47,7 @@
             v-model="account.passwordConfirm"
           ></v-text-field>
         </v-col>
-
-        <v-card-body>
-          <v-btn tile text block @click="createAccount(account)">register</v-btn>
-        </v-card-body>
+        <v-btn tile text block @click="createAccount(account)">register</v-btn>
     </v-col>
   </v-card>
 </template>
@@ -58,7 +61,8 @@ export default {
   }),
   computed: {
     ...mapGetters([
-      'account'
+      'account',
+      'validate'
     ])
   }, 
   methods: {

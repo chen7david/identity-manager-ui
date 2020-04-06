@@ -2,6 +2,7 @@
   <v-app>
     <Navbar/>
     <v-content>
+      <Snackbar/>
       <router-view/>
     </v-content>
   </v-app>
@@ -9,16 +10,20 @@
 
 <script>
 import Navbar from './components/Navbar'
+import Snackbar from './components/Snackbar';
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
 
   components: {
-    Navbar
+    Navbar,
+    Snackbar
   },
-
-  data: () => ({
-    //
-  }),
+  computed:{
+        ...mapGetters([
+            'isAuth',
+        ]),
+    },
 };
 </script>

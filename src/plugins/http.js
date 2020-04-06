@@ -1,5 +1,5 @@
 const axios = require('axios')
-// import store from '../store'
+import store from '../store'
 
 const http = axios.create({
     baseURL: 'http://192.168.50.124:4000',
@@ -30,6 +30,11 @@ http.interceptors.response.use(response => {
     const data = error.response && error.response.data    
     const {isCargo, details} = data
     if(isCargo) {
+        if(details.state == 'validation'){
+            store.dispatch('setValidation', details)
+        }else{
+            store.dispatch('setSnackbar', details)
+        }
         console.log(details)
     }
     return Promise.reject(error)
