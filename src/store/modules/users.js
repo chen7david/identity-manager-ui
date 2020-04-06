@@ -1,13 +1,13 @@
 
 export default {
     state: {
-      user: null,
+      user: JSON.parse(localStorage.getItem('user')),
     },
     getters: {
-      snackbar: (state) => state.snackbar ? state.snackbar : {},
+      user: (state) => state.user ? state.user : {},
     },
     mutations: {
-      SET_USER: (state, user) => state.validation = user,
+      SET_USER: (state, user) => state.user = user,
     },
     actions: {
     },

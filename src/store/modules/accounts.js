@@ -1,4 +1,5 @@
 import http from './../../plugins/http'
+import router from './../../router'
 
 export default {
     state: {
@@ -22,12 +23,23 @@ export default {
         },
 
         async login({commit}, authInfo){
-            const { accessToken, refreshToken, user } = await http.post('/login', authInfo)
-            localStorage.setItem('access-token', accessToken)
-            localStorage.setItem('refresh-token', refreshToken)
-            localStorage.setItem('user', JSON.stringify(user))
+            const { data } = await http.post('/login', authInfo)
+            localStorage.setItem('access-token', data.accessToken)
+            localStorage.setItem('refresh-token', data.refreshToken)
+            localStorage.setItem('user', JSON.stringify(data.user))
             commit('SET_AUTH', true)
+            commit('SET_USER', data.user)
             commit('SET_VALIDATION', null)
         },
+
+        async logout({commit}){
+            localStorage.removeItem('access-token')
+            localStorage.removeItem('refresh-token')
+            localStorage.removeItem('user')
+            commit('SET_AUTH', false)
+            commit('SET_USER', null)
+            router.push('/')
+        }
     },
+
 }
