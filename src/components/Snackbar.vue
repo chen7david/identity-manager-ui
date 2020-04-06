@@ -4,6 +4,7 @@
       v-model="snackbar.show"
       :multi-line="multiLine"
       :color="snackbar.color"
+      :timeout="snackbar.timeout"
     >
       {{ snackbar.text }}
       <v-btn

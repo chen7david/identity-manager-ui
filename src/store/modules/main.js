@@ -19,7 +19,7 @@ export default {
       show: true,
       text: details.message,
       color: details.state || 'dark',
-      timeout: details.timeout || 6000
+      timeout: details.timeout
     },
   },
   actions: {
