@@ -1,15 +1,17 @@
 <template>
-  <div class="home">
-    <h1>Register</h1>
-  </div>
+  <v-container>
+      <RegisterForm/>
+  </v-container>
 </template>
 
 <script>
+import RegisterForm from './../components/account/register-form'
+
 
 export default {
   name: 'Register',
   components: {
-    
+    RegisterForm
   }
 }
 </script>
