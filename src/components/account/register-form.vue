@@ -13,9 +13,9 @@
             name="username"
             outlined
             hint="At least 1 character, no spaces"
+            v-model="account.username"
           ></v-text-field>
         </v-col>
-
         <v-col>
           <v-text-field
             label="Password"
@@ -25,6 +25,7 @@
             :type="show ? 'text' : 'password'"
             hint="At least 6 characters"
             @click:append="show = !show"
+            v-model="account.password"
           ></v-text-field>
         </v-col>
 
@@ -37,21 +38,33 @@
             :type="show ? 'text' : 'password'"
             hint="At least 6 characters"
             @click:append="show = !show"
+            v-model="account.passwordConfirm"
           ></v-text-field>
         </v-col>
 
         <v-card-body>
-          <v-btn tile text block>register</v-btn>
+          <v-btn tile text block @click="createAccount(account)">register</v-btn>
         </v-card-body>
     </v-col>
   </v-card>
 </template>
 
 <script>
-  export default {
-    name: 'register-form',
-    data: () => ({
-      show: false
-    }),
+import { mapGetters, mapActions } from 'vuex'
+export default {
+  name: 'register-form',
+  data: () => ({
+    show: false
+  }),
+  computed: {
+    ...mapGetters([
+      'account'
+    ])
+  }, 
+  methods: {
+    ...mapActions([
+      'createAccount'
+    ])
   }
+}
 </script>
