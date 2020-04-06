@@ -9,15 +9,16 @@
         </v-list-item>  
         <v-col>
           <v-text-field
-            label="username"
+            label="Username"
             name="username"
             outlined
+            hint="At least 1 character, no spaces"
           ></v-text-field>
         </v-col>
 
         <v-col>
           <v-text-field
-            label="password"
+            label="Password"
             name="password"
             outlined
             :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
@@ -26,6 +27,19 @@
             @click:append="show = !show"
           ></v-text-field>
         </v-col>
+
+        <v-col>
+          <v-text-field
+            label="Password-Confirm"
+            name="password"
+            outlined
+            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+            :type="show ? 'text' : 'password'"
+            hint="At least 6 characters"
+            @click:append="show = !show"
+          ></v-text-field>
+        </v-col>
+
         <v-card-body>
           <v-btn tile text block>register</v-btn>
         </v-card-body>
