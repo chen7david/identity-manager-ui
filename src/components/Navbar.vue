@@ -1,8 +1,8 @@
 <template>
     <v-app-bar app dark>
         <v-spacer></v-spacer>
-        {{user.username}}
         <div v-if="isAuth">
+            {{$user.username}}
             <v-btn @click="logout" text tile>logout</v-btn>
         </div>
         <div v-else>
@@ -22,7 +22,7 @@ export default {
     }),
     computed:{
         ...mapGetters([
-            'user',
+            '$user',
             'isAuth'
         ]),
     },
