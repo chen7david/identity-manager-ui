@@ -14,7 +14,6 @@
                 <v-text-field
                 ></v-text-field>
                  <v-spacer></v-spacer>
-
                  <v-dialog v-model="dialog" max-width="500px">
                      <template v-slot:activator="{ on }">
                         <v-btn icon class="mb-2" v-on="on">
@@ -39,8 +38,8 @@
                         </v-card-text>
                         <v-card-actions>
                         <v-spacer></v-spacer>
-                            <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-                            <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+                            <v-btn color="blue darken-1" text @click="dialog = false">Cancel</v-btn>
+                            <v-btn color="blue darken-1" text>Save</v-btn>
                         </v-card-actions>
                     </v-card>
                  </v-dialog>
@@ -76,7 +75,8 @@ export default {
             { text: 'Last Updated', value: 'updated_at' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
-        user: {}
+        user: {},
+        dialog: false,
     }
   },
   methods: {
