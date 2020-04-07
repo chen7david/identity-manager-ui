@@ -4,6 +4,7 @@
         <div v-if="isAuth">
             {{$user.username}}
             <v-btn @click="logout" text tile>logout</v-btn>
+            <v-btn text router to="/authorize" tile>authorize</v-btn>
         </div>
         <div v-else>
             <v-btn text router to="/login" tile>login</v-btn>

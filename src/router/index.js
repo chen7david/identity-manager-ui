@@ -29,6 +29,11 @@ Vue.use(VueRouter)
       name: 'Users',
       component: () => import('../views/Users.vue')
     },
+    {
+      path: '/Authorize',
+      name: 'Authorize',
+      component: () => import('../views/Authorize.vue')
+    },
 ]
 
 const router = new VueRouter({

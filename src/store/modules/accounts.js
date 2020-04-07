@@ -40,6 +40,12 @@ export default {
             commit('SET_AUTH', false)
             commit('SET_USER', null)
             router.push('/')
+        },
+
+        async authorize(_, query){
+            const { data } = await http.post('/authorize', query)
+            console.log(data)
+            router.push(data.url)
         }
     },
 
