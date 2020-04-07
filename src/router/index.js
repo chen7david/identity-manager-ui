@@ -24,6 +24,11 @@ Vue.use(VueRouter)
       name: 'Register',
       component: () => import('../views/Register.vue')
     },
+    {
+      path: '/Users',
+      name: 'Users',
+      component: () => import('../views/Users.vue')
+    },
 ]
 
 const router = new VueRouter({
