@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Welcome</h1>
+    <h1>Authorize</h1>
     {{scopes}}
     <v-btn @click="getAuthCode">get code</v-btn>
 
